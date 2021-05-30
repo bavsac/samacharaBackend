@@ -1,0 +1,83 @@
+{
+  "GET /api": {
+    "description": "serves up a json representation of all the available endpoints of the api"
+  },
+  "GET /api/topics": {
+    "description": "serves an array of all topics",
+    "queries": [],
+    "exampleResponse": {
+      "topics": [
+        {
+          "description": "Code is love, code is life",
+          "slug": "coding"
+        },
+        {
+          "description": "FOOTIE!",
+          "slug": "football"
+        },
+        {
+          "description": "Hey good looking, what you got cooking?",
+          "slug": "cooking"
+        }
+      ]
+    }
+  },
+  "GET /api/articles": {
+    "description": "serves an array of all topics",
+    "queries": ["author", "topic", "sort_by", "order"],
+    "exampleResponse": {
+      "articles": [
+        {
+          "title": "Seafood substitutions are increasing",
+          "topic": "cooking",
+          "author": "weegembump",
+          "body": "Text from the article..",
+          "created_at": 1527695953341
+        },
+        {
+          "title": "Substitutions are increasing",
+          "topic": "cooking",
+          "author": "bump",
+          "body": "Text from the article..",
+          "created_at": 1527695953371
+        }
+      ]
+    },
+    "GET /api/articles/:article_id": {
+      "description": "serves the article with the specified id and includes the number of comments this article has",
+      "queries": [],
+      "exampleResponse": {
+        "articles": [
+          {
+            "article_id": ":articleid",
+            "title": "Seafood substitutions are increasing",
+            "topic": "cooking",
+            "author": "weegembump",
+            "body": "Text from the article..",
+            "created_at": 1527695953341,
+            "votes": 100,
+            "comment_count": 18
+          }
+        ]
+      }
+    },
+    "PATCH /api/articles/:article_id": {
+      "description": "serves the article after ammending by specified quantity(increases for positive and decreases for negative) it with the specified id",
+      "queries": [],
+      "params": [{ "inc_votes": 1 }, { "inc_votes": -1 }],
+      "exampleResponse": {
+        "articles": [
+          {
+            "article_id": ":articleid",
+            "title": "Seafood substitutions are increasing",
+            "topic": "cooking",
+            "author": "weegembump",
+            "body": "Text from the article..",
+            "created_at": 1527695953341,
+            "votes": 11
+          }
+        ]
+      }
+    }
+  }
+}
