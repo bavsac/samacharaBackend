@@ -1,20 +1,33 @@
-about the app
+**About the app**
+**_Samachara_** is an API to access application data programmatically.
+_It mimicks the building of a real world backend service (such as reddit)_.
+It is designed to provide information to the front end architecture requests for.
+The database used is PostgreSQL.
 
-This is an API for the purpose of accessing application data programmatically. This mimicks the building of a real world backend service (such as reddit). This should provide information to the front end architecture.
+**Installation**
+Run the following command to install all the dependencies
+npm install
 
-The database will be PSQL, and you will interact with it using [node-postgres](https://node-postgres.com/).
+**Dependencies**
+-cors
+-dotenv
+-express
+-nodemon
+-jsonwebtoken
+-pg
+-pg-format
+-valid-url
 
-You will spend the setup and seeding phase of this project in a pair, and separate once its time to build the server up! The point to separate is clearly annotated :)
+**Versions**
+-developed on VS Code 1.56.2
+-tested using supertests 6.1.3 ,Jest 26.6.3 and Jest-sorted 1.0.12
 
-how to install
+**maintainence** _- things to validate and update as the app progresses_
 
-dependencies
+- implementation of pagination
+- implementation of JWTokens
 
-versions
-
-maintainence - things to validate and update as the app progresses
-
-constraints
--username has to be in the format of <alpha-string>\_<alpha-string> and the <alpha-string> can be any alphabet in english, case insesitive. The user name has to be unique (!@£$%^&\*()-+=€#⁄™‹›‡°±;:…'¯˘¿...)
+**constraints**
+-username has to be in string format. The username has to be unique and cannot have any special characters with the exception of \_(!@£$%^&\*()-+=€#⁄™‹›‡°±;:…'¯˘¿...)
 
 -name has to be in the format of <string>, any alphabet in the english language(case insisitive)
